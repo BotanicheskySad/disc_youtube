@@ -1,0 +1,31 @@
+# Зависимости (ОГРОМНЫЕ папки — НЕ загружать!)
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Файлы с секретами (пароли от БД, JWT-ключи)
+.env
+.env.local
+.env.production
+
+# Логи
+*.log
+npm-debug.log*
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Редакторы кода
+.vscode/
+.idea/
+
+# Сборки и кэш
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# Временные файлы
+*.tmp
+*.swp
