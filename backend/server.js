@@ -2,11 +2,11 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { Pool } = require('pg');
-const cors = require('cors');  // 👈 ДОБАВИТЬ ЭТУ СТРОКУ
+const cors = require('cors'); 
 
 const app = express();
 
-// 👇 ЭТИ СТРОКИ РЕШАЮТ ПРОБЛЕМУ
+
 app.use(cors({
     origin: 'http://localhost:5173',  // адрес вашего фронтенда
     credentials: true

@@ -1,7 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import Termomiter from './Termomiter'
+
+import Quiz from './Quiz';
+import { QUESTIONS_DB } from '../data/questions';
+import '../styles/App.css';
+
+
+
 
 function Dashboard({ user, onLogout }) {
     const [profile, setProfile] = useState(null);
+
+
+
+    const [currentModule, setCurrentModule] = useState('beginner');
+
+    const modules = [
+        { id: 'beginner', name: '🌱 Начинающий', icon: '🌱' },
+    ];
+
+    const handleModuleChange = (moduleId) => {
+        setCurrentModule(moduleId);
+    };
     
     useEffect(() => {
         const fetchProfile = async () => {
@@ -27,8 +47,12 @@ function Dashboard({ user, onLogout }) {
             <button onClick={onLogout}>Выйти</button>
             
             <div>
-                <h2>Ваши курсы</h2>
-                {/* Здесь будет список видео и задач */}
+                <Quiz 
+                moduleId={currentModule}
+                questions={QUESTIONS_DB[currentModule]}
+                modules={modules}
+                onModuleChange={handleModuleChange}
+                />
             </div>
         </div>
     );
