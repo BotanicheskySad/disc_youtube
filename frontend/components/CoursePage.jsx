@@ -143,11 +143,10 @@ function CoursePage({ user, onLogout }) {
                     <ul className='ul-course-page'>
                         {course.lessons.map((lesson, index) => (
                             <li key={index}>
-                                <span style={{
+                                <span className={course.id === 1 ? "circle-1" : course.id === 2 ? "circle-2" : "nnn"} style={{
                                     display: 'inline-block',
                                     width: '30px',
                                     height: '30px',
-                                    backgroundColor: '#4f46e5',
                                     color: 'white',
                                     borderRadius: '50%',
                                     textAlign: 'center',
@@ -158,6 +157,12 @@ function CoursePage({ user, onLogout }) {
                             </li>
                         ))}
                     </ul>
+                </div>
+                <div className="button-area">
+                    <div className={course.id === 1 ? "btn-1-wrapper" : course.id === 2 ? "btn-2-wrapper" : "nnn"}>
+                        <button className={course.id === 1 ? "btn-1" : course.id === 2 ? "btn-2" : "nnn"}>▶</button>
+                        <div className={course.id === 1 ? "btn-1-text" : course.id === 2 ? "btn-2-text" : "nnn"}>К первому уроку →</div>
+                    </div>
                 </div>
         </div>
     );
