@@ -17,7 +17,6 @@ function Dashboard({ user, onLogout }) {
             title: "React для начинающих",
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png",
             description: "Изучите основы React: компоненты, хуки, состояние и пропсы. Научитесь создавать динамические веб-приложения с нуля.",
-            duration: "8 недель",
             level: "Начинающий"
         },
         {
@@ -25,7 +24,6 @@ function Dashboard({ user, onLogout }) {
             title: "JavaScript Мастер",
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s",
             description: "Углубленный курс по современному JavaScript: асинхронность, замыкания, прототипы, промисы и новые возможности ES2024.",
-            duration: "10 недель",
             level: "Средний"
         },
         {
@@ -33,7 +31,6 @@ function Dashboard({ user, onLogout }) {
             title: "Python для анализа данных",
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png",
             description: "Научитесь использовать Python для обработки и визуализации данных с помощью Pandas, NumPy и Matplotlib.",
-            duration: "12 недель",
             level: "Средний"
         },
         {
@@ -41,7 +38,6 @@ function Dashboard({ user, onLogout }) {
             title: "Веб-дизайн с Figma",
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/960px-Figma-logo.svg.png",
             description: "Освойте создание дизайн-систем, прототипов и интерактивных макетов в Figma для современных веб-проектов.",
-            duration: "6 недель",
             level: "Начинающий"
         },
         {
@@ -49,7 +45,6 @@ function Dashboard({ user, onLogout }) {
             title: "Backend на Node.js",
             image: "https://cp.beget.com/shared/6ayu2lMsV1DpkfCrePd2HEMWvsKDBY-c/logo_nodejs2x.png.webp",
             description: "Создавайте серверные приложения с Express, MongoDB и REST API. Изучите авторизацию, базы данных и деплой.",
-            duration: "10 недель",
             level: "Продвинутый"
         },
         {
@@ -57,7 +52,6 @@ function Dashboard({ user, onLogout }) {
             title: "TypeScript полный курс",
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1280px-Typescript_logo_2020.svg.png",
             description: "Освойте типизацию, дженерики, декораторы и интеграцию TypeScript с фреймворками.",
-            duration: "8 недель",
             level: "Средний"
         }
     ]);
@@ -109,7 +103,7 @@ function Dashboard({ user, onLogout }) {
             <div className="courses-section">               
                 <div className="courses-grid">
                     {courses.map((course) => (
-                        <div key={course.id} className="course-card">
+                        <div key={course.id} className="course-card" onClick={() => handleEnroll(course.id)}>
                             <div className="course-image-container">
                                 <img 
                                     src={course.image} 
@@ -121,20 +115,6 @@ function Dashboard({ user, onLogout }) {
                             <h3 className="course-title">{course.title}</h3>
                             <div className="course-hover-content">
                                 <p className="course-description">{course.description}</p>
-                                <div className="course-meta">
-                                    <span className="course-duration">
-                                        <svg className="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        {course.duration}
-                                    </span>
-                                    <button 
-                                        className="enroll-btn"
-                                        onClick={() => handleEnroll(course.id)}
-                                    >
-                                        Записаться →
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     ))}

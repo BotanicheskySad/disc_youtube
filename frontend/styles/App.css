@@ -473,6 +473,11 @@ body {
 
 
 
+
+
+
+
+
 .header-buttons{
   display: flex;
   justify-content: space-between;
@@ -482,6 +487,10 @@ body {
 .top-menu-button{
   background: transparent;
   border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .top-menu-button img{
@@ -495,6 +504,31 @@ body {
 
 
 
+
+
+
+
+
+
+.margin-top-course-page{
+  margin-top: 5%;
+}
+
+
+
+.ul-course-page li{
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9fafb;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+[data-theme="dark"] .ul-course-page li{
+  background-color: #1a1a1a;
+}
+
 /* Явно задаем цвет для иконок в разных темах */
 [data-theme="light"] .theme-toggle-btn img {
   filter: brightness(0) invert(0); /* Чёрный */
@@ -503,6 +537,16 @@ body {
 [data-theme="dark"] .top-menu-button img {
   filter: brightness(100);
 }
+
+[data-theme="light"] .top-menu-button span {
+  color: #000000;
+}
+
+[data-theme="dark"] .top-menu-button span {
+  color: #ffffff;
+}
+
+
 
 
 
@@ -595,6 +639,7 @@ body {
 .course-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 [data-theme="dark"] .course-card{
@@ -763,4 +808,16 @@ body {
 body {
   background-color: var(--bg);
   color: var(--text);
+}
+
+.course-title-course-page{
+  font-size: 2rem;
+}
+
+.pointer-off:hover{
+  cursor: default;
+}
+
+.logo-btn{
+  font-size: 1rem;
 }
