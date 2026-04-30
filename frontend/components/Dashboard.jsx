@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Добавьте этот импорт
 import '../styles/App.css';
+import { useTheme } from './ThemeContext';  // Убедитесь, что путь правильный
+import sunIcon from '../public/sun.svg';
+import moonIcon from '../public/moon.svg';
+import outIcon from '../public/out.svg';
+
 
 function Dashboard({ user, onLogout }) {
+    const { theme, toggleTheme } = useTheme();
+    const navigate = useNavigate(); // Добавьте эту строку
     const [profile, setProfile] = useState(null);
     const [courses, setCourses] = useState([
         {
@@ -72,6 +80,11 @@ function Dashboard({ user, onLogout }) {
         fetchProfile();
     }, []);
     
+    // Функция для перехода на страницу курса
+    const handleEnroll = (courseId) => {
+        navigate(`/course/${courseId}`);
+    };
+    
     return (
         <div className="dashboard-container">
             {/* Header */}
@@ -80,22 +93,20 @@ function Dashboard({ user, onLogout }) {
                     <h1 className="welcome-title">
                         Добро пожаловать, {user.email}!
                     </h1>
-                    <button onClick={onLogout} className="logout-btn">
-                        <svg className="logout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                        </svg>
-                        Выйти
-                    </button>
+                    <div className='header-buttons'>
+                        <button className='top-menu-button' onClick={toggleTheme}>
+                            <img src={theme === 'light' ? moonIcon : sunIcon} alt="" />
+                            
+                        </button>
+                        <button className='top-menu-button' onClick={onLogout}>
+                            <img src={outIcon} alt="" />
+                        </button>
+                    </div>
                 </div>
             </header>
 
             {/* Courses Section */}
-            <div className="courses-section">
-                <div className="courses-header">
-                    <h2>Наши курсы</h2>
-                    <p>Выберите курс для обучения</p>
-                </div>
-                
+            <div className="courses-section">               
                 <div className="courses-grid">
                     {courses.map((course) => (
                         <div key={course.id} className="course-card">
@@ -117,7 +128,12 @@ function Dashboard({ user, onLogout }) {
                                         </svg>
                                         {course.duration}
                                     </span>
-                                    <button className="enroll-btn">Записаться →</button>
+                                    <button 
+                                        className="enroll-btn"
+                                        onClick={() => handleEnroll(course.id)}
+                                    >
+                                        Записаться →
+                                    </button>
                                 </div>
                             </div>
                         </div>

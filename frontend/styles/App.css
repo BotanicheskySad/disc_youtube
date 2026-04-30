@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: white;
   min-height: 100vh;
   padding: 20px;
 }
@@ -473,6 +473,36 @@ body {
 
 
 
+.header-buttons{
+  display: flex;
+  justify-content: space-between;
+  width: 6%;
+}
+
+.top-menu-button{
+  background: transparent;
+  border: none;
+}
+
+.top-menu-button img{
+  width: 24px;
+  height: 24px;
+}
+
+.theme-toggle-btn img {
+  filter: none; /* Убираем возможные фильтры */
+}
+
+
+
+/* Явно задаем цвет для иконок в разных темах */
+[data-theme="light"] .theme-toggle-btn img {
+  filter: brightness(0) invert(0); /* Чёрный */
+}
+
+[data-theme="dark"] .top-menu-button img {
+  filter: brightness(100);
+}
 
 
 
@@ -480,7 +510,6 @@ body {
 /* Dashboard Styles */
 .dashboard-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .dashboard-header {
@@ -490,6 +519,12 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    border-radius: 15px;
+}
+
+[data-theme="dark"] .dashboard-header{
+  background: #212121;
+  border-radius: 15px;
 }
 
 .header-content {
@@ -507,23 +542,8 @@ body {
     margin: 0;
 }
 
-.logout-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.logout-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+[data-theme="dark"] .welcome-title{
+  color: #ffffff;
 }
 
 .logout-icon {
@@ -577,6 +597,12 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+[data-theme="dark"] .course-card{
+  background: #212121;
+  
+
+}
+
 .course-image-container {
     position: relative;
     overflow: hidden;
@@ -615,6 +641,10 @@ body {
     margin: 0;
 }
 
+[data-theme="dark"] .course-title{
+  color: #ffffff;
+}
+
 /* Описание всегда видно - убираем max-height и hover эффекты */
 .course-description {
     color: #666;
@@ -622,6 +652,10 @@ body {
     padding: 0 1.5rem;
     margin: 0.5rem 0 1rem 0;
     font-size: 0.95rem;
+}
+
+[data-theme="dark"] .course-description{
+  color: #ffffff;
 }
 
 .course-meta {
@@ -678,6 +712,9 @@ body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+    .header-buttons{
+  width: 25%;
+}
 }
 
 /* Animations */
@@ -703,3 +740,27 @@ body {
 .course-card:nth-child(4) { animation-delay: 0.4s; }
 .course-card:nth-child(5) { animation-delay: 0.5s; }
 .course-card:nth-child(6) { animation-delay: 0.6s; }
+
+
+
+
+
+
+
+
+
+/* App.css или index.css */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #ffffff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
