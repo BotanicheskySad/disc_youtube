@@ -4,6 +4,8 @@ import AuthForm from '../components/AuthForm';
 import Dashboard from '../components/Dashboard';
 import CoursePage from '../components/CoursePage';
 import { ThemeProvider } from '../components/ThemeContext';
+import RoadmapPage from '../components/RoadmapPage';
+import ScrollToTop from '../components/ScrollToTop';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -39,6 +41,7 @@ function App() {
     return (
         <ThemeProvider>
         <Router>
+             <ScrollToTop />
             <Routes>
                 <Route path="/login" element={
                     !user ? <AuthForm onLogin={handleLogin} /> : <Navigate to="/dashboard" />
@@ -51,6 +54,11 @@ function App() {
                 <Route path="/course/:courseId" element={
                     <ProtectedRoute>
                         <CoursePage user={user} onLogout={handleLogout} />
+                    </ProtectedRoute>
+                } />
+                <Route path="/course/:courseId/roadmap" element={
+                    <ProtectedRoute>
+                        <RoadmapPage user={user} onLogout={handleLogout} />
                     </ProtectedRoute>
                 } />
                 <Route path="/" element={<Navigate to={user ? "/dashboard" : "/login"} />} />

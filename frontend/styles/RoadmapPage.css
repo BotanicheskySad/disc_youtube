@@ -1,0 +1,118 @@
+/* RoadmapPage.css — адаптив для мобильных */
+.roadmap-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+  margin-top: 3rem;
+}
+
+/* Заголовок страницы — меньше на мобильных */
+.roadmap-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.roadmap-title {
+  padding-bottom: 2%;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  background: linear-gradient(135deg, #2c7da0, #61dafb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.roadmap-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  padding: 0 0.5rem;
+}
+
+/* Сетка карточек — одна колонка на мобильных, две на планшетах */
+.chapters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Планшеты (от 600px) */
+@media (min-width: 600px) {
+  .roadmap-page {
+    padding: 1.5rem;
+  }
+  
+  .chapters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .roadmap-title {
+    font-size: 1.9rem;
+  }
+}
+
+/* Десктоп (от 1000px) */
+@media (min-width: 1000px) {
+  .roadmap-page {
+    padding: 2rem 1.5rem;
+  }
+  
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .roadmap-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Футер страницы — стек на мобильных */
+.roadmap-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.roadmap-footer span {
+  padding: 0.25rem 0.5rem;
+}
+
+/* ===== ТЁМНАЯ И СВЕТЛАЯ ТЕМА ===== */
+
+/* Светлая тема (по умолчанию) */
+[data-theme="light"] .roadmap-page {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9eef3 100%);
+}
+
+[data-theme="light"] .roadmap-subtitle {
+  color: #2c6e8f;
+}
+
+[data-theme="light"] .roadmap-footer {
+  border-top-color: #cbdde6;
+  color: #5a7e91;
+}
+
+/* Тёмная тема */
+[data-theme="dark"] .roadmap-page {
+  background: #212121;
+}
+
+[data-theme="dark"] .roadmap-subtitle {
+  color: #8db4c9;
+}
+
+[data-theme="dark"] .roadmap-footer {
+  border-top-color: #2a3a48;
+  color: #7a99ab;
+}

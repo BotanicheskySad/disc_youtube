@@ -105,6 +105,11 @@ function CoursePage({ user, onLogout }) {
             </div>
         );
     }
+
+    // В CoursePage.jsx обновите функцию handleLessons
+    const handleLessons = (courseId) => {
+        navigate(`/course/${courseId}/roadmap`);
+    };
    
     return (
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
@@ -160,7 +165,7 @@ function CoursePage({ user, onLogout }) {
                 </div>
                 <div className="button-area">
                     <div className={course.id === 1 ? "btn-1-wrapper" : course.id === 2 ? "btn-2-wrapper" : "nnn"}>
-                        <button className={course.id === 1 ? "btn-1" : course.id === 2 ? "btn-2" : "nnn"}>▶</button>
+                        <button className={course.id === 1 ? "btn-1" : course.id === 2 ? "btn-2" : "nnn"} onClick={() => handleLessons(course.id)}>▶</button>
                         <div className={course.id === 1 ? "btn-1-text" : course.id === 2 ? "btn-2-text" : "nnn"}>К первому уроку →</div>
                     </div>
                 </div>
