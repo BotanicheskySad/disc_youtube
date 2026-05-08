@@ -5,6 +5,12 @@ import { useTheme } from './ThemeContext';  // Убедитесь, что пут
 import sunIcon from '../public/sun.svg';
 import moonIcon from '../public/moon.svg';
 import outIcon from '../public/out.svg';
+import robloxStudioIcon from '../public/roblox-logo.png';
+import unityIcon from '../public/unity-logo.png';
+import htmlIcon from '../public/html-logo.png';
+import pythonIcon from '../public/python-logo.png';
+import godotIcon from '../public/godot-logo.svg';
+import gitIcon from '../public/git-logo.svg';
 
 
 function Dashboard({ user, onLogout }) {
@@ -14,44 +20,44 @@ function Dashboard({ user, onLogout }) {
     const [courses, setCourses] = useState([
         {
             id: 1,
-            title: "React для начинающих",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png",
-            description: "Изучите основы React: компоненты, хуки, состояние и пропсы. Научитесь создавать динамические веб-приложения с нуля.",
+            title: "Roblox Studio",
+            image: `${robloxStudioIcon}`,
+            description: "Изучите создание игр и 3D-миров в Roblox Studio с помощью языка Lua.",
             level: "Начинающий"
         },
         {
             id: 2,
-            title: "JavaScript Мастер",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s",
-            description: "Углубленный курс по современному JavaScript: асинхронность, замыкания, прототипы, промисы и новые возможности ES2024.",
+            title: "Unity",
+            image: `${unityIcon}`,
+            description: "Освойте разработку 2D и 3D игр в Unity с использованием C#.",
             level: "Средний"
         },
         {
             id: 3,
-            title: "Python для анализа данных",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png",
-            description: "Научитесь использовать Python для обработки и визуализации данных с помощью Pandas, NumPy и Matplotlib.",
+            title: "Python",
+            image: `${pythonIcon}`,
+            description: "Изучите основы программирования на Python: синтаксис, функции и работу с данными.",
             level: "Средний"
         },
         {
             id: 4,
-            title: "Веб-дизайн с Figma",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/960px-Figma-logo.svg.png",
-            description: "Освойте создание дизайн-систем, прототипов и интерактивных макетов в Figma для современных веб-проектов.",
+            title: "Создание сайтов",
+            image: `${htmlIcon}`,
+            description: "Научитесь создавать современные сайты с нуля, используя HTML, CSS и JavaScript.",
             level: "Начинающий"
         },
         {
             id: 5,
-            title: "Backend на Node.js",
-            image: "https://cp.beget.com/shared/6ayu2lMsV1DpkfCrePd2HEMWvsKDBY-c/logo_nodejs2x.png.webp",
-            description: "Создавайте серверные приложения с Express, MongoDB и REST API. Изучите авторизацию, базы данных и деплой.",
+            title: "Godot",
+            image: `${godotIcon}`,
+            description: "Освойте создание игр в Godot с помощью GDScript и встроенных инструментов.",
             level: "Продвинутый"
         },
         {
             id: 6,
-            title: "TypeScript полный курс",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1280px-Typescript_logo_2020.svg.png",
-            description: "Освойте типизацию, дженерики, декораторы и интеграцию TypeScript с фреймворками.",
+            title: "GitHub",
+            image: `${gitIcon}`,
+            description: "Изучите систему контроля версий Git и платформу GitHub для совместной разработки.",
             level: "Средний"
         }
     ]);
