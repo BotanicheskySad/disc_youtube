@@ -1,13 +1,19 @@
 // ChapterCard.jsx - компонент карточки главы
 import React, { useState } from 'react';
-import '../styles/ChapterCard.css';
+import '@styles/ChapterCard.css';
+import { useNavigate } from 'react-router-dom';
 
 const ChapterCard = ({ chapter }) => {
+   const navigate = useNavigate();
   const [isBranchOpen, setIsBranchOpen] = useState(false);
   const { number, title, description, subsections, branches } = chapter;
 
+  const handleBackToDashboard = () => {
+    navigate('/dashboard');
+  };
+
   return (
-    <div className="chapter-card">
+    <div className="chapter-card" onClick={handleBackToDashboard}>
       <div className="card-header">
         <span className="chapter-number">{number}</span>
         <h3 className="chapter-title">{title}</h3>

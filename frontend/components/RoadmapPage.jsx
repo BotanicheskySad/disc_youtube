@@ -1,14 +1,14 @@
 // components/RoadmapPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useTheme } from './ThemeContext';
-import '../styles/RoadmapPage.css';
-import ChapterCard from './ChapterCard';
-import sunIcon from '../public/sun.svg';
-import moonIcon from '../public/moon.svg';
-import outIcon from '../public/out.svg';
-import logoIcon from '../public/logo.svg';
-import logoLightIcon from '../public/logo-light.svg';
+import { useTheme } from '@components/ThemeContext';
+import '@styles/RoadmapPage.css';
+import ChapterCard from '@components/ChapterCard';
+import sunIcon from '@public/sun.svg';
+import moonIcon from '@public/moon.svg';
+import outIcon from '@public/out.svg';
+import logoIcon from '@public/logo.svg';
+import logoLightIcon from '@public/logo-light.svg';
 
 // Данные roadmap для разных курсов
 const roadmapsData = {

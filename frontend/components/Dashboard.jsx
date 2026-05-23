@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Добавьте этот импорт
-import '../styles/App.css';
-import { useTheme } from './ThemeContext';  // Убедитесь, что путь правильный
-import sunIcon from '../public/sun.svg';
-import moonIcon from '../public/moon.svg';
-import outIcon from '../public/out.svg';
-import robloxStudioIcon from '../public/roblox-logo.png';
-import unityIcon from '../public/unity-logo.png';
-import htmlIcon from '../public/html-logo.png';
-import pythonIcon from '../public/python-logo.png';
-import godotIcon from '../public/godot-logo.svg';
-import gitIcon from '../public/git-logo.svg';
+import '@styles/App.css';
+import { useTheme } from '@components/ThemeContext';  // Убедитесь, что путь правильный
+import sunIcon from '@public/sun.svg';
+import moonIcon from '@public/moon.svg';
+import outIcon from '@public/out.svg';
+import robloxStudioIcon from '@public/roblox-logo.png';
+import unityIcon from '@public/unity-logo.png';
+import htmlIcon from '@public/html-logo.png';
+import pythonIcon from '@public/python-logo.png';
+import godotIcon from '@public/godot-logo.svg';
+import gitIcon from '@public/git-logo.svg';
 
 
 function Dashboard({ user, onLogout }) {

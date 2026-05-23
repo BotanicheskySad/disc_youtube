@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MultipleChoice from './QuestionTypes/MultipleChoice';
-import DragDrop from './QuestionTypes/DragDrop';
-import FillCode from './QuestionTypes/FillCode';
-import OrderBlocks from './QuestionTypes/OrderBlocks';
-import Button from './common/Button';
-import Feedback from './common/Feedback';
+import DragDrop from '@components/QuestionTypes/DragDrop';
+import FillCode from '@components/QuestionTypes/FillCode';
+import OrderBlocks from '@components/QuestionTypes/OrderBlocks';
+import Button from '@components/common/Button';
+import Feedback from '@components/common/Feedback';
 
 const Quiz = ({ moduleId, questions, modules, onModuleChange }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

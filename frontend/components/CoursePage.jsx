@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useTheme } from './ThemeContext';  // Убедитесь, что путь правильный
-import sunIcon from '../public/sun.svg';
-import moonIcon from '../public/moon.svg';
-import outIcon from '../public/out.svg';
-import logoIcon from '../public/logo.svg'
-import logoLightIcon from '../public/logo-light.svg'
-import '../styles/App.css';
+import { useTheme } from '@components/ThemeContext';  // Убедитесь, что путь правильный
+import sunIcon from '@public/sun.svg';
+import moonIcon from '@public/moon.svg';
+import outIcon from '@public/out.svg';
+import logoIcon from '@public/logo.svg'
+import logoLightIcon from '@public/logo-light.svg'
+import '@styles/App.css';
 
 function CoursePage({ user, onLogout }) {
     const { theme, toggleTheme } = useTheme();

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useTheme } from './ThemeContext';
-import sunIcon from '../public/sun.svg';
-import moonIcon from '../public/moon.svg';
-import '../styles/AuthForm.css';
+import { useTheme } from '@components/ThemeContext';
+import sunIcon from '@public/sun.svg';
+import moonIcon from '@public/moon.svg';
+import '@styles/AuthForm.css';
 
 function AuthForm({ onLogin }) {
     const { theme, toggleTheme } = useTheme();
