@@ -8,12 +8,12 @@ const ChapterCard = ({ chapter }) => {
   const [isBranchOpen, setIsBranchOpen] = useState(false);
   const { number, title, description, subsections, branches } = chapter;
 
-  const handleBackToDashboard = () => {
-    navigate('/dashboard');
+  const handleQuiz1 = () => {
+    navigate('/quiz1');
   };
 
   return (
-    <div className="chapter-card" onClick={handleBackToDashboard}>
+    <div className="chapter-card" onClick={handleQuiz1}>
       <div className="card-header">
         <span className="chapter-number">{number}</span>
         <h3 className="chapter-title">{title}</h3>

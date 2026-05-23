@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Добавьте этот импорт
-import '@styles/App.css';
+import '@styles/Dashboard.css';
 import { useTheme } from '@components/ThemeContext';  // Убедитесь, что путь правильный
 import sunIcon from '@public/sun.svg';
 import moonIcon from '@public/moon.svg';

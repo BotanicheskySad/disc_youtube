@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import AuthForm from '../components/AuthForm';
-import Dashboard from '../components/Dashboard';
-import CoursePage from '../components/CoursePage';
-import { ThemeProvider } from '../components/ThemeContext';
-import RoadmapPage from '../components/RoadmapPage';
-import ScrollToTop from '../components/ScrollToTop';
+import AuthForm from '@components/AuthForm';
+import Dashboard from '@components/Dashboard';
+import CoursePage from '@components/CoursePage';
+import { ThemeProvider } from '@components/ThemeContext';
+import RoadmapPage from '@components/RoadmapPage';
+import ScrollToTop from '@components/ScrollToTop';
+import Quiz from '@components/Quiz';
+import { QUESTIONS_DB } from '../data/questions'
 
 function App() {
     const [user, setUser] = useState(null);
@@ -49,6 +51,16 @@ function App() {
                 <Route path="/dashboard" element={
                     <ProtectedRoute>
                         <Dashboard user={user} onLogout={handleLogout} />
+                    </ProtectedRoute>
+                } />
+                <Route path="/quiz1" element={
+                    <ProtectedRoute>
+                        <Quiz 
+                            moduleId="beginner"
+                            questions={QUESTIONS_DB.beginner}
+                            modules={[]}  // пустой массив, если переключение модулей не нужно
+                            onModuleChange={() => {}}  // пустая функция-заглушка
+                        />
                     </ProtectedRoute>
                 } />
                 <Route path="/course/:courseId" element={
