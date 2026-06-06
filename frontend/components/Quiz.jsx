@@ -5,6 +5,7 @@ import FillCode from '@components/QuestionTypes/FillCode';
 import OrderBlocks from '@components/QuestionTypes/OrderBlocks';
 import Button from '@components/common/Button';
 import Feedback from '@components/common/Feedback';
+import "@styles/Quiz.css"
 
 const Quiz = ({ moduleId, questions, modules, onModuleChange }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -98,19 +99,7 @@ const Quiz = ({ moduleId, questions, modules, onModuleChange }) => {
   };
 
   return (
-    <div className="quiz-container">
-      <div className="module-selector">
-        {modules.map(module => (
-          <button
-            key={module.id}
-            className={`module-btn ${moduleId === module.id ? 'active' : ''}`}
-            onClick={() => onModuleChange(module.id)}
-          >
-            {module.name}
-          </button>
-        ))}
-      </div>
-      
+    <div className="quiz-container">      
       <div className="quiz-header">
         <div className="progress-info">
           <span className="progress-text">
